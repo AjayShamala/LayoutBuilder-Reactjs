@@ -1,1 +1,44 @@
 /* Write your CSS here */
+.container {
+  display: flex;
+  justify-content: space-around;
+  margin-left: 100px;
+  margin-right: 100px;
+}
+.navbar-container {
+  background-color: #cbd5e1;
+  padding-top: 40px;
+  padding-left: 40px;
+  padding-bottom: 40px;
+  padding-right: 40px;
+}
+.navbar-containers {
+  background-color: #e2e8f0;
+  padding-top: 40px;
+  padding-left: 40px;
+  padding-bottom: 40px;
+  padding-right: 40px;
+}
+.left {
+  color: #475569;
+  font-family: 'Roboto';
+  font-size: 15px;
+}
+.unorder-list {
+  list-style-type: none;
+}
+.list-container {
+  color: #64748b;
+  font-size: 14px;
+  padding: 3px;
+  font-weight: bold;
+  font-family: 'Roboto';
+}
+.para {
+  font-size: 17px;
+  font-family: 'Roboto';
+  color: #64748b;
+}
+.list {
+  color: #64748b;
+}
