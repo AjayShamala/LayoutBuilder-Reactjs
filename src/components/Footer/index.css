@@ -1,1 +1,17 @@
 /* Write your CSS here */
+/* Write your CSS here */
+.bg-containerss {
+  text-align: center;
+  background-color: #cbd5e1;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin: 5px;
+  margin-left: 100px;
+  margin-right: 100px;
+}
+.main-header {
+  color: #475569;
+
+  font-family: 'Roboto';
+  font-size: 29px;
+}
