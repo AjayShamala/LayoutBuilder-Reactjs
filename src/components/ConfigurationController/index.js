@@ -1,24 +1,24 @@
 import ConfigurationContext from '../../context/ConfigurationContext'
 import './index.css'
-const ConfigurationController = ()=>(
+const ConfigurationController = () => (
   <ConfigurationContext.Consumer>
     {value => {
       const {
-        toggleLeftBar,
-        toggleRightBar,
-        toggleContext,
-        onChangeToggleLeftBar,
-        onChangeContext,
-        onChangeToggleRightBar,
+        showRightNavbar,
+        showLeftNavbar,
+        showContent,
+        onToggleShowContent,
+        onToggleShowLeftNavbar,
+        onToggleShowRightNavbar,
       } = value
       const onChangeContextss = () => {
-        onChangeContext()
+        onToggleShowContent()
       }
       const onChangeToggleLeftBars = event => {
-        onChangeToggleLeftBar(event.target.value)
+        onToggleShowLeftNavbar(event.target.value)
       }
       const onChangeRightBar = event => {
-        onChangeToggleRightBar(event.target.value)
+        onToggleShowRightNavbar(event.target.value)
       }
       return (
         <div className="consumer-layout">
@@ -27,7 +27,7 @@ const ConfigurationController = ()=>(
             type="checkbox"
             id="conText"
             className="input-container"
-            value={toggleContext}
+            value={showContent}
             onChange={onChangeContextss}
           />
           <label htmlFor="conText" className="label-container">
@@ -36,7 +36,7 @@ const ConfigurationController = ()=>(
           <input
             type="checkbox"
             id="conTexts"
-            value={toggleLeftBar}
+            value={showLeftNavbar}
             onChange={onChangeToggleLeftBars}
             className="input-container"
           />
@@ -46,7 +46,7 @@ const ConfigurationController = ()=>(
           <input
             type="checkbox"
             id="conTextss"
-            value={toggleRightBar}
+            value={showRightNavbar}
             onChange={onChangeRightBar}
             className="input-container"
           />
