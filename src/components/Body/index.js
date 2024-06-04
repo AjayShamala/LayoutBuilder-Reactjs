@@ -3,10 +3,10 @@ import './index.css'
 const Body = () => (
   <ConfigurationContext.Consumer>
     {value => {
-      const {toggleLeftNavbar, toggleContext, toggleRightNavBar} = value
+      const {showLeftNavbar, showRightNavbar, showContent} = value
       return (
         <div className="container">
-          {toggleLeftNavbar ? (
+          {showLeftNavbar ? (
             <div className="navbar-container">
               <h1 className="left">Left Navbar Menu</h1>
               <ul className="unorder-list">
@@ -17,7 +17,7 @@ const Body = () => (
               </ul>
             </div>
           ) : null}
-          {toggleContext ? (
+          {showContent ? (
             <div className="navbar-container">
               <h1 className="left">Content</h1>
               <ul className="unorder-list">
@@ -31,13 +31,13 @@ const Body = () => (
               </ul>
             </div>
           ) : null}
-          {toggleRightNavBar ? (
+          {showRightNavbar ? (
             <div className="navbar-container">
               <h1 className="left">Right Navbar</h1>
-              <ul className="unorder-list">
-                <li className="list">Ad 1</li>
-                <li className="list">Ad 2</li>
-              </ul>
+              <div className="unorder-list">
+                <p className="list">Ad 1</p>
+                <p className="list">Ad 2</p>
+              </div>
             </div>
           ) : null}
         </div>
