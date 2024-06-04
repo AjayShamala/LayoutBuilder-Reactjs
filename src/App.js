@@ -11,38 +11,36 @@ class App extends Component {
   state = {
     showLeftBar: true,
     showRightBar: true,
-    showContext: true,
+    showContent: true,
   }
-  onChangeContextss=()=>{
-    this.setState((previous)=>({showContext:!previous.showContext}))
+  onToggleShowContent = () => {
+    this.setState(previous => ({showContent: !previous.showContent}))
   }
-  onChangeToggleLeftBars=()=>{
-    this.setState((previous)=>({showLeftBar:!previous.showLeftBar}))
+  onToggleShowLeftNavbar = () => {
+    this.setState(previous => ({showLeftBar: !previous.showLeftBar}))
   }
-  onChangeRightBar=()=>{
-    this.setState((previous)=>({showRightBar:!previous.showRightBar}))
+  onToggleShowRightNavbar = () => {
+    this.setState(previous => ({showRightBar: !previous.showRightBar}))
   }
-  render(){
-    const {showContext,showLeftBar,showRightBar}=this.state 
-   return(
-    <ConfigurationContext.Provider
-     value={{
-      showContext,
-      showLeftBar,
-      showRightBar,
-      onChangeContextss:this.onChangeContextss,
-      onChangeToggleLeftBars:this.onChangeToggleLeftBars,
-      onChangeRightBar:this.onChangeRightBar
-    }}
+  render() {
+    const {showContent, showLeftBar, showRightBar} = this.state
+    return (
+      <ConfigurationContext.Provider
+        value={{
+          showContent,
+          showLeftBar,
+          showRightBar,
+          onToggleShowContent: this.onToggleShowContent,
+          onToggleShowLeftNavbar: this.onToggleShowLeftNavbar,
+          onToggleShowRightNavbar: this.onToggleShowRightNavbar,
+        }}
       >
-      <div className="app-contaianer">
-      <ConfigurationController/>
-      <Layout/>
-      </div>
-        
-    
-    </ConfigurationContext.Provider>
-   )
+        <div className="app-contaianer">
+          <ConfigurationController />
+          <Layout />
+        </div>
+      </ConfigurationContext.Provider>
+    )
   }
 }
 
